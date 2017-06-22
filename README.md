@@ -1,30 +1,20 @@
-# yes
 
-> A Vue.js project
+> Vue.js 多页面打包
 
-## Build Setup
+## 开始
 
 ``` bash
-# install dependencies
+# 安装依赖
 npm install
 
-# serve with hot reload at localhost:8080
+#开发环境使用单页开发
 npm run dev
 
-# build for production with minification
+# 线上环境使用多页开发
 npm run build
+#打包完后运行express服务器
+npm run start
 
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+详情查看源码 [webpackvue](http://git.oschina.net/byy0105/webpackvue)
