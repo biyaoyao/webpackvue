@@ -8,8 +8,8 @@ let server = http.createServer(app);
 let url = require('url');
 let colors = require('colors');
 let host="127.0.0.1";
-let port=8080;
-let serverPort = 3000;
+let port=3000;
+let serverPort = 3001;
 app.set('views', path.join(__dirname, '../dist/views'));
 app.engine('.html', ejs.__express);
 app.set('view engine', 'html'); //替换文件扩展名ejs为html
@@ -22,6 +22,7 @@ app.get('/', function(req, response, next) {//主页
 app.use('/api/*', function(request, response, next) {//接口转发
 	let path=request.originalUrl.split('/api')[1];
 	response.setHeader("Access-Control-Allow-Origin", "*");
+    response.setHeader('Access-Control-Allow-Credentials', true);// Allow Cookie,解决跨域sessiion共享
 	response.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
 	response.setHeader("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
 	response.setHeader("X-Powered-By", ' 3.2.1')
@@ -32,9 +33,7 @@ app.use('/api/*', function(request, response, next) {//接口转发
 		port: port,
 		method: 'GET', //这里是发送的方法
 		path: path,
-		headers: {
-			token: request.headers.accept
-		}
+		headers: request.headers
 	};
 	//以下是接受数据的代码
 	let body = '';
@@ -43,7 +42,7 @@ app.use('/api/*', function(request, response, next) {//接口转发
 			body += d;
 		}).on('end', function() {
 			console.log(("转发的链接是:").gray+("http://"+host+":"+port+path).green);
-			response.end(body);
+			response.send(body);
 		});
 
 	}).on('error', function(e) {
