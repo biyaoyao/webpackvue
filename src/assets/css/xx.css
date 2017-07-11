@@ -1,0 +1,43 @@
+.tips {
+	margin-top: 20px;
+	text-align: center;
+	padding-bottom: 6px;
+	font-size: 12px;
+	font-weight: 700;
+}
+
+.user-select-photo {
+	margin: auto;
+	width: 60px;
+	text-align: center;
+	height: 60px;
+	background: rgba(75, 124, 190, 1);
+	border-radius: 53px;
+	padding: 5px;
+	box-sizing: content-box;
+}
+
+.user-select-photo img {
+	
+}
+
+.el-carousel__item h3 {
+	color: #475669;
+	font-size: 14px;
+	opacity: 0.75;
+	line-height: 200px;
+	margin: 0;
+	text-align: center;
+}
+
+.el-carousel__item:nth-child(2n) {
+	background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n+1) {
+	background-color: #d3dce6;
+}
+
+.el-carousel__indicators.el-carousel__indicators--outside {
+	display: none;
+}

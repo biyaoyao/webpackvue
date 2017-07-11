@@ -2,10 +2,14 @@
 let path = require('path')
 
 module.exports = {
-    moduleName:'views',
-    build: {
+	
+  //网站模块名，例如 http://192.168.0.216:8089/module/app/initlayer.html 中的 
+  //【views】，默认为views，修改这里的配置的同时，也要同时重命名/src/views的这个文件夹名称  
+  moduleName:'views', 
+  
+  build: {
     env: require('./prod.env'),
-    index: path.resolve(__dirname, '../dist/dev-index.html'),
+    index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
@@ -24,13 +28,13 @@ module.exports = {
   },
   dev: {
     env: require('./dev.env'),
-    port: 3001,
-    autoOpenBrowser: true,
+    port: 8888,
+    autoOpenBrowser: false,
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
         '/api': {
-            target: 'http://127.0.0.1:3000/',
+            target: 'http://116.62.146.221:8080/',
             changeOrigin: true,
             pathRewrite: {
                 '^/api': '/'

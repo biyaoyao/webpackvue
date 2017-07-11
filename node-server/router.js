@@ -1,8 +1,11 @@
-module.exports = {
-    "/admin/welcome": "admin/welcome/welcome",
-    "/admin/welcome/test": "admin/welcome/test/test",
-    "/error": "error/index/error",
-    "/favicon.ico":""
-}
-
-
+module.exports = [
+	'/admin/login',
+	'/admin/home',
+	'/admin/welcome',
+	'/admin/posterList',
+	'/admin/posterAdd',
+	'/admin/posterEdit',
+	'/admin/posterPreview',
+	'/admin/posterTagAdd',
+	'/user/div'
+]
